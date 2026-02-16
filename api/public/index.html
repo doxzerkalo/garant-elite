@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+<h2>Гарант</h2>
+
+<button onclick="createDeal()">Создать сделку</button>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.expand();
+
+async function createDeal(){
+  const r = await fetch("/api", { method:"POST" });
+  const d = await r.json();
+  alert("ID сделки: " + d.id);
+}
+</script>
+
+</body>
+</html>
