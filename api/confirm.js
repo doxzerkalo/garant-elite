@@ -18,4 +18,4 @@ router.post('/confirm', (req, res) => {
     return res.status(200).json(result);
 });
 
-module.exports = router;
+module.exports = router
